@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOAA POES/ESSA Image Archive</title>
+<meta name="description" content="Browse NOAA NCEI's public POES/ESSA satellite imagery archive (1966&ndash;1978) live, straight from their hosted directory &mdash; nothing downloaded or re-hosted.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="NOAA POES / ESSA Image Archive">
+<meta property="og:description" content="Browse NOAA NCEI's public POES/ESSA satellite imagery archive (1966&ndash;1978) live, straight from their hosted directory.">
+<meta property="og:image" content="og-image.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NOAA POES / ESSA Image Archive">
+<meta name="twitter:description" content="Browse NOAA NCEI's public POES/ESSA satellite imagery archive (1966&ndash;1978) live, straight from their hosted directory.">
+<meta name="twitter:image" content="og-image.jpg">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-top">
+    <h1>NOAA POES / ESSA Image Archive</h1>
+    <p class="subtitle">Live-browsing NOAA NCEI&rsquo;s satellite imagery directory (1966&ndash;1978).</p>
+  </div>
+  <div class="controls">
+    <label class="control">
+      <span>Year</span>
+      <select id="year-select"></select>
+    </label>
+    <span id="count-label" class="count-label"></span>
+  </div>
+</header>
+
+<main id="grid" class="grid" aria-live="polite"></main>
+<div id="loading" class="loading hidden">Reading directory&hellip;</div>
+<div id="sentinel" class="sentinel"></div>
+
+<div id="lightbox" class="lightbox hidden">
+  <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+  <button id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+  <button id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
+  <div class="lightbox-content">
+    <div class="lightbox-img-wrap">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+    <div class="lightbox-meta">
+      <div id="lightbox-title" class="lightbox-title"></div>
+      <div id="lightbox-sub" class="lightbox-sub"></div>
+      <a id="lightbox-original" class="lightbox-link" href="#" target="_blank" rel="noopener">Open original file on NOAA NCEI &#8599;</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  Imagery served live from <a href="https://www.ncei.noaa.gov/data/poes-essa-noaa-image-files/access/" target="_blank" rel="noopener">NOAA NCEI</a>.
+  Thumbnails are generated on the fly by the <a href="https://wsrv.nl" target="_blank" rel="noopener">wsrv.nl</a> image proxy &mdash; no copies are stored here.
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
